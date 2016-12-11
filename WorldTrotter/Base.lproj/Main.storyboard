@@ -87,7 +87,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2006" y="-338"/>
+            <point key="canvasLocation" x="2006" y="-1934"/>
         </scene>
         <!--Map-->
         <scene sceneID="nUj-02-hec">
@@ -105,17 +105,29 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="q0N-Db-vpr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="M2V-7f-bsN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="oNW-aj-Vzg"/>
                         <segue destination="ElK-EE-c3l" kind="relationship" relationship="viewControllers" id="Hy8-7G-2e2"/>
+                        <segue destination="7iO-3V-ZVW" kind="relationship" relationship="viewControllers" id="yrS-gZ-OGn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaX-Vr-kzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="900" y="-823"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Ixx-Sd-nLP">
+            <objects>
+                <viewController id="7iO-3V-ZVW" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" id="xzw-ZA-le3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBu-oe-svM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="-406"/>
         </scene>
     </scenes>
     <resources>
