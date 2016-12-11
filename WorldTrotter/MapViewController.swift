@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
 
 // MARK: - View Life Cycle
 extension MapViewController {
+  
   override func loadView() {
     mapView = MKMapView()
     view = mapView
