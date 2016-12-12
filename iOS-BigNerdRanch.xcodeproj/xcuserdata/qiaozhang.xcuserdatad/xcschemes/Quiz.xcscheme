@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7FADDFB1DFCB8F10045E577"
-               BuildableName = "WorldTrotter.app"
-               BlueprintName = "WorldTrotter"
-               ReferencedContainer = "container:WorldTrotter.xcodeproj">
+               BlueprintIdentifier = "E7FC35A91DFEE08C0035E597"
+               BuildableName = "Quiz.app"
+               BlueprintName = "Quiz"
+               ReferencedContainer = "container:iOS-BigNerdRanch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E7FADDFB1DFCB8F10045E577"
-            BuildableName = "WorldTrotter.app"
-            BlueprintName = "WorldTrotter"
-            ReferencedContainer = "container:WorldTrotter.xcodeproj">
+            BlueprintIdentifier = "E7FC35A91DFEE08C0035E597"
+            BuildableName = "Quiz.app"
+            BlueprintName = "Quiz"
+            ReferencedContainer = "container:iOS-BigNerdRanch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -50,17 +50,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      language = "es"
-      region = "ES">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E7FADDFB1DFCB8F10045E577"
-            BuildableName = "WorldTrotter.app"
-            BlueprintName = "WorldTrotter"
-            ReferencedContainer = "container:WorldTrotter.xcodeproj">
+            BlueprintIdentifier = "E7FC35A91DFEE08C0035E597"
+            BuildableName = "Quiz.app"
+            BlueprintName = "Quiz"
+            ReferencedContainer = "container:iOS-BigNerdRanch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -76,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E7FADDFB1DFCB8F10045E577"
-            BuildableName = "WorldTrotter.app"
-            BlueprintName = "WorldTrotter"
-            ReferencedContainer = "container:WorldTrotter.xcodeproj">
+            BlueprintIdentifier = "E7FC35A91DFEE08C0035E597"
+            BuildableName = "Quiz.app"
+            BlueprintName = "Quiz"
+            ReferencedContainer = "container:iOS-BigNerdRanch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
