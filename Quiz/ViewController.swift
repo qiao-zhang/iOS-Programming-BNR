@@ -65,6 +65,8 @@ private extension ViewController {
     UIView.animate(
       withDuration: 0.5,
       delay: 0,
+      usingSpringWithDamping: 0.7,
+      initialSpringVelocity: 1,
       options: [.curveLinear],
       animations: {
         
