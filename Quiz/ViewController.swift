@@ -9,16 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-  @IBOutlet weak var questionLabel: UILabel!
+  @IBOutlet weak var questionLabelInUse: UILabel!
+  @IBOutlet weak var questionLabelInWaiting: UILabel!
   @IBOutlet weak var answerLabel: UILabel!
+  @IBOutlet weak var questionLabelInUseCenterXConstraint: NSLayoutConstraint!
+  @IBOutlet weak var questionLabelInWaitingCenterXConstraint: NSLayoutConstraint!
   
-  @IBAction func showNextQuestion(_ sender: UIButton) {
-    currentQuestionIndex += 1
-    if currentQuestionIndex == questions.count { currentQuestionIndex = 0 }
+  @IBAction func nextQuestionButtonTapped(_ sender: UIButton) {
     showQuestion()
   }
   
-  @IBAction func showAnswer(_ sender: UIButton) {
+  @IBAction func showAnswerButtonTapped(_ sender: UIButton) {
     let answer = answers[currentQuestionIndex]
     answerLabel.text = answer
   }
@@ -36,23 +37,70 @@ class ViewController: UIViewController {
     NSLocalizedString("Grapes", comment: "answer to cognac")
   ]
   
-  var currentQuestionIndex = 0
+  var currentQuestionIndex = -1 {
+    didSet {
+      answerLabel.isEnabled =
+        0 <= currentQuestionIndex && currentQuestionIndex < answers.count
+    }
+  }
 }
 
 
 // MARK: - private methods
 private extension ViewController {
   func showQuestion() {
-    questionLabel.text = questions[currentQuestionIndex]
+    currentQuestionIndex += 1
+    if currentQuestionIndex >= questions.count {
+      currentQuestionIndex = 0
+    }
+    
+    questionLabelInWaiting.text = questions[currentQuestionIndex]
+    questionLabelInWaiting.alpha = 0
     answerLabel.text = "???"
+
+    animateLabelTransitions()
   }
+  
+  func animateLabelTransitions() {
+    UIView.animate(
+      withDuration: 0.5,
+      delay: 0,
+      options: [.curveLinear],
+      animations: {
+        
+        // animate alpha
+        self.questionLabelInUse.alpha = 0
+        self.questionLabelInWaiting.alpha = 1
+        
+        // animate position
+        let screenWidth = self.view.frame.width
+        self.questionLabelInWaitingCenterXConstraint.constant += screenWidth
+        self.questionLabelInUseCenterXConstraint.constant += screenWidth
+        self.view.layoutIfNeeded()
+    }) { _ in
+      swap(&self.questionLabelInUse, &self.questionLabelInWaiting)
+      swap(&self.questionLabelInUseCenterXConstraint,
+           &self.questionLabelInWaitingCenterXConstraint)
+      self.relayout()
+    }
+  }
+  
+  func relayout() {
+    let screenWidth = view.frame.width
+    questionLabelInWaitingCenterXConstraint.constant = -screenWidth
+    questionLabelInUseCenterXConstraint.constant = 0
+    view.layoutIfNeeded()
+  }
+
 }
 
 
 // MARK: - View Life Cycle
 extension ViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    relayout()
     showQuestion()
   }
 }
