@@ -10,12 +10,7 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
   var viewModel: ViewModel!
-  let numberFormatter: NumberFormatter = {
-    let nf = NumberFormatter()
-    nf.numberStyle = .currency
-    nf.locale = Locale.current
-    return nf
-  } ()
+  
 }
 
 // MARK: - View Life Cycle
@@ -29,81 +24,61 @@ extension ItemsViewController {
                               bottom: 0, right: 0)
     tableView.contentInset = insets
     tableView.scrollIndicatorInsets = insets
+    tableView.dataSource = viewModel
   }
 }
 
-// MARK: - UITableViewDataSource
-extension ItemsViewController {
-  
-  override func numberOfSections(in tableView: UITableView) -> Int {
-    return viewModel.numberOfSections()
-  }
-  
-  override func tableView(_ tableView: UITableView,
-                 viewForHeaderInSection section: Int) -> UIView? {
-    let headerLabel = UILabel()
-    headerLabel.text = viewModel.headerFor(section: section)
-    return headerLabel
-  }
-  
-  override func tableView(_ tableView: UITableView,
-                          heightForHeaderInSection section: Int) -> CGFloat {
-    return 44
-  }
-  
-  override func tableView(_ tableView: UITableView,
-                          numberOfRowsInSection section: Int) -> Int {
-    return viewModel.numberOfRowsIn(section: section)
-  }
-  
-  override func tableView(_ tableView: UITableView,
-                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
-                                             for: indexPath)
-    let rowData = viewModel.getRowDataFor(indexPath: indexPath)
-    
-    cell.textLabel?.text = rowData.name
-    cell.detailTextLabel?.text =
-      numberFormatter.string(from: rowData.value as NSNumber)
-    
-    return cell
-  }
-}
 
 extension ItemsViewController {
 
-  class ViewModel {
+  class ViewModel: NSObject, UITableViewDataSource {
+    
+    var itemStore: ItemStore
     var sections: [Section] = []
+    let numberFormatter: NumberFormatter = {
+      let nf = NumberFormatter()
+      nf.numberStyle = .currency
+      nf.locale = Locale.current
+      return nf
+    } ()
     
     init(itemStore: ItemStore) {
-      var itemsAbove50 = [Row]()
-      var itemsUnder50 = [Row]()
-      
-      for item in itemStore.allItems {
-        let row = Row(name: item.name, value: item.valueInDollars)
-        if item.valueInDollars <= 50 {
-          itemsUnder50.append(row)
-        } else {
-          itemsAbove50.append(row)
+      self.itemStore = itemStore
+      super.init()
+      updateSections()
+    }
+    
+    func updateSections() {
+      let rows =
+        itemStore.allItems.map { item in
+          Row(title: item.name,
+              detail: numberFormatter.string(
+                from: item.valueInDollars as NSNumber)!)
         }
+      let section = Section(header: "", rows: rows)
+      sections = [section]
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+      return sections[section].rows.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      if indexPath.row == sections[indexPath.section].rows.count {
+        let cell =
+          tableView.dequeueReusableCell(withIdentifier: "NoMoreItemsCell",
+                                        for: indexPath)
+        return cell
       }
-      
-      sections = [Section(header: "Items Above 50", rows: itemsAbove50),
-                  Section(header: "Items Under 50", rows: itemsUnder50)]
-    }
-    
-    func numberOfSections() -> Int {
-      return sections.count
-    }
-    func numberOfRowsIn(section: Int) -> Int {
-      return sections[section].rows.count
-    }
-    func getRowDataFor(indexPath: IndexPath) -> Row {
-      return sections[indexPath.section].rows[indexPath.row]
-    }
-    
-    func headerFor(section: Int) -> String {
-      return sections[section].header
+      let cell =
+        tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
+                                      for: indexPath)
+      let rowData = sections[indexPath.section].rows[indexPath.row]
+      cell.textLabel?.text = rowData.title
+      cell.detailTextLabel?.text = rowData.detail
+      return cell
     }
   }
 
@@ -113,8 +88,8 @@ extension ItemsViewController {
   }
   
   struct Row {
-    var name: String
-    var value: Int
+    var title: String
+    var detail: String
   }
 
 }
