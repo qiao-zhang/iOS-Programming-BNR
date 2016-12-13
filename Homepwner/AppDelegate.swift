@@ -21,9 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     let itemStore = ItemStore()
+    let itemsViewModel = ItemsViewModel(itemStore: itemStore)
     
     let itemsController = window!.rootViewController as! ItemsViewController
-    itemsController.itemStore = itemStore
+    itemsController.viewModel = itemsViewModel
     
     return true
   }
