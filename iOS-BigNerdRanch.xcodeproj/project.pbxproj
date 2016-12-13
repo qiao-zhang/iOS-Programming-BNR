@@ -20,6 +20,7 @@
 		E74133901DFD97DE00A217B6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741338F1DFD97DE00A217B6 /* WebViewController.swift */; };
 		E74133921DFD97F200A217B6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74133911DFD97F200A217B6 /* WebKit.framework */; };
 		E76A6D311E0074660018CE01 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76A6D301E0074660018CE01 /* ItemCell.swift */; };
+		E76A6D331E009CEE0018CE01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76A6D321E009CEE0018CE01 /* DetailViewController.swift */; };
 		E7BF10701DFDC0B7003CE1F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7BF10721DFDC0B7003CE1F6 /* Localizable.strings */; };
 		E7FADE001DFCB8F10045E577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FADDFF1DFCB8F10045E577 /* AppDelegate.swift */; };
 		E7FADE021DFCB8F10045E577 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FADE011DFCB8F10045E577 /* ConversionViewController.swift */; };
@@ -55,6 +56,7 @@
 		E74133941DFDBC4B00A217B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E74133951DFDBCAA00A217B6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		E76A6D301E0074660018CE01 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		E76A6D321E009CEE0018CE01 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E7BF10711DFDC0B7003CE1F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10731DFDC0B9003CE1F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10741DFDC0BB003CE1F6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				E7169CA01DFF2DCA00864358 /* AppDelegate.swift */,
 				E7169CA41DFF2DCA00864358 /* Main.storyboard */,
+				E76A6D321E009CEE0018CE01 /* DetailViewController.swift */,
 				E7169CBE1DFF384B00864358 /* Item.swift */,
 				E7169CC01DFF3C4C00864358 /* ItemStore.swift */,
 				E7169CA71DFF2DCA00864358 /* Assets.xcassets */,
@@ -320,6 +323,7 @@
 				E7169CBD1DFF37B600864358 /* ItemsViewController.swift in Sources */,
 				E7169CBF1DFF384B00864358 /* Item.swift in Sources */,
 				E7169CC11DFF3C4C00864358 /* ItemStore.swift in Sources */,
+				E76A6D331E009CEE0018CE01 /* DetailViewController.swift in Sources */,
 				E7169CA11DFF2DCA00864358 /* AppDelegate.swift in Sources */,
 				E76A6D311E0074660018CE01 /* ItemCell.swift in Sources */,
 			);
