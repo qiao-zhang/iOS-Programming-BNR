@@ -30,13 +30,6 @@ class ItemsViewController: UITableViewController {
   }
   
   var itemStore: ItemStore!
-  
-  let numberFormatter: NumberFormatter = {
-    let nf = NumberFormatter()
-    nf.numberStyle = .currency
-    nf.locale = Locale.current
-    return nf
-  } ()
 }
 
 // MARK: - View Life Cycle
@@ -50,6 +43,8 @@ extension ItemsViewController {
                               bottom: 0, right: 0)
     tableView.contentInset = insets
     tableView.scrollIndicatorInsets = insets
+    
+    tableView.rowHeight = 65
   }
 }
 
@@ -62,13 +57,14 @@ extension ItemsViewController {
   
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
-                                             for: indexPath)
+    let cell =
+      tableView.dequeueReusableCell(withIdentifier: "ItemCell",
+                                    for: indexPath) as! ItemCell
     let item = itemStore.allItems[indexPath.row]
     
-    cell.textLabel?.text = item.name
-    cell.detailTextLabel?.text =
-      numberFormatter.string(from: item.valueInDollars as NSNumber)
+    cell.nameLabel.text = item.name
+    cell.serialNumberLabel.text = item.serialNumber
+    cell.valueLabel.text = "$\(item.valueInDollars)"
     
     return cell
   }
