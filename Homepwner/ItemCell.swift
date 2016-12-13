@@ -15,7 +15,13 @@ class ItemCell: UITableViewCell {
   
   var viewModel: ViewModel!
   
-  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    [nameLabel, serialNumberLabel, valueLabel].forEach {
+      $0?.adjustsFontForContentSizeCategory = true
+    }
+  }
 }
 
 extension ItemCell {

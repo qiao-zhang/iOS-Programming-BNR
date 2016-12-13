@@ -44,7 +44,8 @@ extension ItemsViewController {
     tableView.contentInset = insets
     tableView.scrollIndicatorInsets = insets
     
-    tableView.rowHeight = 65
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 65
   }
 }
 
@@ -65,6 +66,7 @@ extension ItemsViewController {
     cell.nameLabel.text = item.name
     cell.serialNumberLabel.text = item.serialNumber
     cell.valueLabel.text = "$\(item.valueInDollars)"
+    cell.valueLabel.textColor = item.valueInDollars < 50 ? UIColor.green : .red
     
     return cell
   }
