@@ -9,7 +9,28 @@
 import UIKit
 
 class ItemsViewController: UITableViewController {
+  
+  
+  @IBAction func addButtonTapped(_ sender: UIButton) {
+    let newItem = itemStore.createItem()
+    if let index = itemStore.allItems.index(of: newItem) {
+      let indexPath  = IndexPath(row: index, section: 0)
+      tableView.insertRows(at: [indexPath], with: .automatic)
+    }
+  }
+  
+  @IBAction func toggleEditingMode(_ sender: UIButton) {
+    if isEditing {
+      sender.setTitle("Edit", for: .normal)
+      setEditing(false, animated: true)
+    } else {
+      sender.setTitle("Done", for: .normal)
+      setEditing(true, animated: true)
+    }
+  }
+  
   var itemStore: ItemStore!
+  
   let numberFormatter: NumberFormatter = {
     let nf = NumberFormatter()
     nf.numberStyle = .currency
