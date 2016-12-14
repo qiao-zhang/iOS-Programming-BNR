@@ -193,6 +193,11 @@
                                             <action selector="takePicture:" destination="ibs-aJ-4qf" id="Soi-2g-ugG"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Remove Photo" id="5FZ-WU-gAq">
+                                        <connections>
+                                            <action selector="removePhotoButtonTapped:" destination="ibs-aJ-4qf" id="CwK-R7-77n"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

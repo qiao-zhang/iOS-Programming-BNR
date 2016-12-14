@@ -29,7 +29,14 @@ class DetailViewController: UIViewController {
     
     imagePicker.delegate = self
     
+    imagePicker.allowsEditing = true
+    
     present(imagePicker, animated: true, completion: nil)
+  }
+  
+  @IBAction func removePhotoButtonTapped(_ sender: UIBarButtonItem) {
+    imageStore.deleteImage(forKey: item.itemKey)
+    imageView.image = nil
   }
   
   @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
