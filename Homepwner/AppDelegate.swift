@@ -19,13 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
-    let itemStore = ItemStore()
-    
     let navController =
       window!.rootViewController as! UINavigationController
     let itemsController =
       navController.topViewController as! ItemsViewController
+    
+    let itemStore = ItemStore()
     itemsController.itemStore = itemStore
+    
+    let imageStore = ImageStore()
+    itemsController.imageStore = imageStore
     
     return true
   }

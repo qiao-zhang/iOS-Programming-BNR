@@ -23,6 +23,7 @@
 		E76A6D331E009CEE0018CE01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76A6D321E009CEE0018CE01 /* DetailViewController.swift */; };
 		E7BF10701DFDC0B7003CE1F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7BF10721DFDC0B7003CE1F6 /* Localizable.strings */; };
 		E7F1817B1E01928600D01D74 /* ItemDetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1817A1E01928600D01D74 /* ItemDetailTextField.swift */; };
+		E7F1817F1E01C1F500D01D74 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1817E1E01C1F500D01D74 /* ImageStore.swift */; };
 		E7FADE001DFCB8F10045E577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FADDFF1DFCB8F10045E577 /* AppDelegate.swift */; };
 		E7FADE021DFCB8F10045E577 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FADE011DFCB8F10045E577 /* ConversionViewController.swift */; };
 		E7FADE051DFCB8F10045E577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FADE031DFCB8F10045E577 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		E7BF10731DFDC0B9003CE1F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10741DFDC0BB003CE1F6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7F1817A1E01928600D01D74 /* ItemDetailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTextField.swift; sourceTree = "<group>"; };
+		E7F1817E1E01C1F500D01D74 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		E7FADDFC1DFCB8F10045E577 /* iOS-BigNerdRanch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-BigNerdRanch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FADDFF1DFCB8F10045E577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FADE011DFCB8F10045E577 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				E7169CA41DFF2DCA00864358 /* Main.storyboard */,
 				E7F1817A1E01928600D01D74 /* ItemDetailTextField.swift */,
 				E76A6D321E009CEE0018CE01 /* DetailViewController.swift */,
+				E7F1817E1E01C1F500D01D74 /* ImageStore.swift */,
 				E7169CBE1DFF384B00864358 /* Item.swift */,
 				E7169CC01DFF3C4C00864358 /* ItemStore.swift */,
 				E7169CA71DFF2DCA00864358 /* Assets.xcassets */,
@@ -326,6 +329,7 @@
 				E7169CBD1DFF37B600864358 /* ItemsViewController.swift in Sources */,
 				E7169CBF1DFF384B00864358 /* Item.swift in Sources */,
 				E7169CC11DFF3C4C00864358 /* ItemStore.swift in Sources */,
+				E7F1817F1E01C1F500D01D74 /* ImageStore.swift in Sources */,
 				E76A6D331E009CEE0018CE01 /* DetailViewController.swift in Sources */,
 				E7169CA11DFF2DCA00864358 /* AppDelegate.swift in Sources */,
 				E7F1817B1E01928600D01D74 /* ItemDetailTextField.swift in Sources */,

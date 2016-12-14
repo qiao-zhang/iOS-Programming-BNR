@@ -10,7 +10,7 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
   
-  
+  // MARK: Actions
   @IBAction func addBarButtonItemTapped(_ sender: UIBarButtonItem) {
     let newItem = itemStore.createItem()
     if let index = itemStore.allItems.index(of: newItem) {
@@ -19,7 +19,9 @@ class ItemsViewController: UITableViewController {
     }
   }
   
+  // MARK: Properties
   var itemStore: ItemStore!
+  var imageStore: ImageStore!
 }
 
 // MARK: - View Life Cycle
@@ -37,6 +39,23 @@ extension ItemsViewController {
     super.viewWillAppear(animated)
     
     tableView.reloadData()
+  }
+}
+
+// MARK: - Navigation
+extension ItemsViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.identifier {
+    case "showItem"?:
+      if let row = tableView.indexPathForSelectedRow?.row {
+        let item = itemStore.allItems[row]
+        let detailViewController = segue.destination as! DetailViewController
+        detailViewController.item = item
+        detailViewController.imageStore = imageStore
+      }
+    default:
+      preconditionFailure("Unexpected segue identifier")
+    }
   }
 }
 
@@ -77,10 +96,11 @@ extension ItemsViewController {
       let cancelAction = UIAlertAction(title: "Cancel",
                                        style: .cancel,
                                        handler: nil)
-      let deleteAction = UIAlertAction(title: "Delete",
-                                       style: .destructive) { _ in
-        self.itemStore.removeItem(item)
-        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+      let deleteAction =
+        UIAlertAction(title: "Delete", style: .destructive) { _ in
+          self.itemStore.removeItem(item)
+          self.imageStore.deleteImage(forKey: item.itemKey)
+          self.tableView.deleteRows(at: [indexPath], with: .automatic)
       }
       ac.addAction(cancelAction)
       ac.addAction(deleteAction)
@@ -93,22 +113,5 @@ extension ItemsViewController {
                           moveRowAt sourceIndexPath: IndexPath,
                           to destinationIndexPath: IndexPath) {
     itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-  }
-}
-
-
-// MARK: - Navigation
-extension ItemsViewController {
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.identifier {
-    case "showItem"?:
-      if let row = tableView.indexPathForSelectedRow?.row {
-        let item = itemStore.allItems[row]
-        let detailViewController = segue.destination as! DetailViewController
-        detailViewController.item = item
-      }
-    default:
-      preconditionFailure("Unexpected segue identifier")
-    }
   }
 }

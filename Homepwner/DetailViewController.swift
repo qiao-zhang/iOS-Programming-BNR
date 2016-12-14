@@ -10,19 +10,40 @@ import UIKit
 
 class DetailViewController: UIViewController {
   
+  // MARK: Outlets
   @IBOutlet weak var nameField: ItemDetailTextField!
   @IBOutlet weak var serialNumberField: ItemDetailTextField!
   @IBOutlet weak var valueField: ItemDetailTextField!
   @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var imageView: UIImageView!
+  
+  // MARK: Actions
+  @IBAction func takePicture(_ sender: UIBarButtonItem) {
+    
+    let imagePicker = UIImagePickerController()
+    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+      imagePicker.sourceType = .camera
+    } else {
+      imagePicker.sourceType = .photoLibrary
+    }
+    
+    imagePicker.delegate = self
+    
+    present(imagePicker, animated: true, completion: nil)
+  }
+  
   @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
     view.endEditing(true)
   }
   
+  // MARK: Properties
   var item: Item! {
     didSet {
       navigationItem.title = item.name
     }
   }
+  
+  var imageStore: ImageStore!
   
   let numberFormatter: NumberFormatter = {
     let nf = NumberFormatter()
@@ -39,6 +60,11 @@ class DetailViewController: UIViewController {
     return df
   }()
   
+}
+
+// MARK: - View Life Cycle
+extension DetailViewController {
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
@@ -48,6 +74,8 @@ class DetailViewController: UIViewController {
       numberFormatter.string(from: item.valueInDollars as NSNumber)
     dateLabel.text =
       dateFormatter.string(from: item.dateCreated)
+    imageView.image =
+      imageStore.image(forKey: item.itemKey)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -67,9 +95,27 @@ class DetailViewController: UIViewController {
   }
 }
 
+// MARK: - UITextFieldDelegate
 extension DetailViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true
   }
+}
+
+// MAR: - UIImagePickerControllerDelegate
+extension DetailViewController:
+  UINavigationControllerDelegate,
+  UIImagePickerControllerDelegate {
+  
+  func imagePickerController(
+    _ picker: UIImagePickerController,
+    didFinishPickingMediaWithInfo info: [String : Any]) {
+    
+    let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    imageStore.setImage(image, forKey: item.itemKey)
+    
+    dismiss(animated: true, completion: nil)
+  }
+  
 }
