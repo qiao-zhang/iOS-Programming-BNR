@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Item: NSObject {
+class Item: NSObject, NSCoding {
   var name: String
   var valueInDollars: Int
   var serialNumber: String?

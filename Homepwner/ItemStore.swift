@@ -9,8 +9,24 @@
 import Foundation
 
 class ItemStore {
-  var allItems = [Item]()
   
+  // MARK: Properties
+  var allItems: [Item]
+  let itemArchiveURL: URL = {
+    let documentsDirectory =
+      FileManager.default.urls(for: .documentDirectory,
+                               in: .userDomainMask).first!
+    return documentsDirectory.appendingPathComponent("items.archive")
+  }()
+  
+  // MARK: Initializers
+  init() {
+    allItems =
+      NSKeyedUnarchiver.unarchiveObject(withFile: itemArchiveURL.path)
+        as? [Item] ?? []
+  }
+  
+  // MARK: Methods updating items
   @discardableResult func createItem() -> Item {
     let newItem = Item(random: true)
     allItems.append(newItem)
@@ -27,5 +43,12 @@ class ItemStore {
     if sourceIndex == destinationIndex { return }
     let itemToMove = allItems.remove(at: sourceIndex)
     allItems.insert(itemToMove, at: destinationIndex)
+  }
+  
+  // MARK: Methods for persistence
+  func saveChanges() -> Bool {
+    print("Save items to : \(itemArchiveURL.path)")
+    return NSKeyedArchiver.archiveRootObject(allItems,
+                                             toFile: itemArchiveURL.path)
   }
 }

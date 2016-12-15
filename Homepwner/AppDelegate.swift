@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  let itemStore = ItemStore()
 
   func application(
     _ application: UIApplication,
@@ -24,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let itemsController =
       navController.topViewController as! ItemsViewController
     
-    let itemStore = ItemStore()
     itemsController.itemStore = itemStore
     
     let imageStore = ImageStore()
@@ -41,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidEnterBackground(_ application: UIApplication) {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    let success = itemStore.saveChanges()
+    if (success) {
+      print("Saved all of the Items")
+    } else {
+      print("Could not save any of the Items")
+    }
   }
 
   func applicationWillEnterForeground(_ application: UIApplication) {
