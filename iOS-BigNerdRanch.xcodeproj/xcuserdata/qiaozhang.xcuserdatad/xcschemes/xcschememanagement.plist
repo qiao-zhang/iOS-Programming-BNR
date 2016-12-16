@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>TouchTracker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>WorldTrotter.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>E7169C9D1DFF2DCA00864358</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E74DB2651E03235800EDD798</key>
 		<dict>
 			<key>primary</key>
 			<true/>
