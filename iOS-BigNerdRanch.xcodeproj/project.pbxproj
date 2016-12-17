@@ -28,6 +28,12 @@
 		E74DB27B1E032A4000EDD798 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74DB27A1E032A4000EDD798 /* DrawView.swift */; };
 		E76A6D311E0074660018CE01 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76A6D301E0074660018CE01 /* ItemCell.swift */; };
 		E76A6D331E009CEE0018CE01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76A6D321E009CEE0018CE01 /* DetailViewController.swift */; };
+		E787CEC91E04CE1100705C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787CEC81E04CE1100705C4E /* AppDelegate.swift */; };
+		E787CECE1E04CE1100705C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E787CECC1E04CE1100705C4E /* Main.storyboard */; };
+		E787CED01E04CE1100705C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E787CECF1E04CE1100705C4E /* Assets.xcassets */; };
+		E787CED31E04CE1100705C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E787CED11E04CE1100705C4E /* LaunchScreen.storyboard */; };
+		E787CED91E04CE2C00705C4E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787CED81E04CE2C00705C4E /* PhotosViewController.swift */; };
+		E787CEDB1E04D0A200705C4E /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E787CEDA1E04D0A200705C4E /* FlickrAPI.swift */; };
 		E7BF10701DFDC0B7003CE1F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7BF10721DFDC0B7003CE1F6 /* Localizable.strings */; };
 		E7F1817B1E01928600D01D74 /* ItemDetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1817A1E01928600D01D74 /* ItemDetailTextField.swift */; };
 		E7F1817F1E01C1F500D01D74 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1817E1E01C1F500D01D74 /* ImageStore.swift */; };
@@ -75,6 +81,14 @@
 		E74DB27A1E032A4000EDD798 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		E76A6D301E0074660018CE01 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		E76A6D321E009CEE0018CE01 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E787CEC61E04CE1100705C4E /* Photorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E787CEC81E04CE1100705C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E787CECD1E04CE1100705C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E787CECF1E04CE1100705C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E787CED21E04CE1100705C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E787CED41E04CE1100705C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E787CED81E04CE2C00705C4E /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		E787CEDA1E04D0A200705C4E /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		E7BF10711DFDC0B7003CE1F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10731DFDC0B9003CE1F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10741DFDC0BB003CE1F6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -105,6 +119,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E74DB2631E03235800EDD798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E787CEC31E04CE1100705C4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,6 +194,20 @@
 			path = TouchTracker;
 			sourceTree = "<group>";
 		};
+		E787CEC71E04CE1100705C4E /* Photorama */ = {
+			isa = PBXGroup;
+			children = (
+				E787CEC81E04CE1100705C4E /* AppDelegate.swift */,
+				E787CECC1E04CE1100705C4E /* Main.storyboard */,
+				E787CEDA1E04D0A200705C4E /* FlickrAPI.swift */,
+				E787CECF1E04CE1100705C4E /* Assets.xcassets */,
+				E787CED11E04CE1100705C4E /* LaunchScreen.storyboard */,
+				E787CED41E04CE1100705C4E /* Info.plist */,
+				E787CED81E04CE2C00705C4E /* PhotosViewController.swift */,
+			);
+			path = Photorama;
+			sourceTree = "<group>";
+		};
 		E7FADDF31DFCB8F10045E577 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +215,7 @@
 				E7FC35AB1DFEE08C0035E597 /* Quiz */,
 				E7169C9F1DFF2DCA00864358 /* Homepwner */,
 				E74DB2671E03235800EDD798 /* TouchTracker */,
+				E787CEC71E04CE1100705C4E /* Photorama */,
 				E7FADDFD1DFCB8F10045E577 /* Products */,
 				E741338A1DFCE6EE00A217B6 /* Frameworks */,
 			);
@@ -192,6 +228,7 @@
 				E7FC35AA1DFEE08C0035E597 /* Quiz.app */,
 				E7169C9E1DFF2DCA00864358 /* Homepwner.app */,
 				E74DB2661E03235800EDD798 /* TouchTracker.app */,
+				E787CEC61E04CE1100705C4E /* Photorama.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +300,23 @@
 			productReference = E74DB2661E03235800EDD798 /* TouchTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E787CEC51E04CE1100705C4E /* Photorama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E787CED71E04CE1100705C4E /* Build configuration list for PBXNativeTarget "Photorama" */;
+			buildPhases = (
+				E787CEC21E04CE1100705C4E /* Sources */,
+				E787CEC31E04CE1100705C4E /* Frameworks */,
+				E787CEC41E04CE1100705C4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Photorama;
+			productName = Photorama;
+			productReference = E787CEC61E04CE1100705C4E /* Photorama.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E7FADDFB1DFCB8F10045E577 /* iOS-BigNerdRanch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7FADE0E1DFCB8F10045E577 /* Build configuration list for PBXNativeTarget "iOS-BigNerdRanch" */;
@@ -316,6 +370,11 @@
 						DevelopmentTeam = 5H9H3DSGAL;
 						ProvisioningStyle = Automatic;
 					};
+					E787CEC51E04CE1100705C4E = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 5H9H3DSGAL;
+						ProvisioningStyle = Automatic;
+					};
 					E7FADDFB1DFCB8F10045E577 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
@@ -345,6 +404,7 @@
 				E7FC35A91DFEE08C0035E597 /* Quiz */,
 				E7169C9D1DFF2DCA00864358 /* Homepwner */,
 				E74DB2651E03235800EDD798 /* TouchTracker */,
+				E787CEC51E04CE1100705C4E /* Photorama */,
 			);
 		};
 /* End PBXProject section */
@@ -367,6 +427,16 @@
 				E74DB2731E03235800EDD798 /* LaunchScreen.storyboard in Resources */,
 				E74DB2701E03235800EDD798 /* Assets.xcassets in Resources */,
 				E74DB26E1E03235800EDD798 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E787CEC41E04CE1100705C4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E787CED31E04CE1100705C4E /* LaunchScreen.storyboard in Resources */,
+				E787CED01E04CE1100705C4E /* Assets.xcassets in Resources */,
+				E787CECE1E04CE1100705C4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +488,16 @@
 				E74DB26B1E03235800EDD798 /* ViewController.swift in Sources */,
 				E74DB27B1E032A4000EDD798 /* DrawView.swift in Sources */,
 				E74DB2691E03235800EDD798 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E787CEC21E04CE1100705C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E787CEDB1E04D0A200705C4E /* FlickrAPI.swift in Sources */,
+				E787CED91E04CE2C00705C4E /* PhotosViewController.swift in Sources */,
+				E787CEC91E04CE1100705C4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +562,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				E74DB2721E03235800EDD798 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E787CECC1E04CE1100705C4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E787CECD1E04CE1100705C4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E787CED11E04CE1100705C4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E787CED21E04CE1100705C4E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -582,6 +678,32 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.qiaozhang.TouchTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E787CED51E04CE1100705C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5H9H3DSGAL;
+				INFOPLIST_FILE = Photorama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.qiaozhang.Photorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E787CED61E04CE1100705C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5H9H3DSGAL;
+				INFOPLIST_FILE = Photorama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.qiaozhang.Photorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -749,6 +871,15 @@
 			buildConfigurations = (
 				E74DB2751E03235800EDD798 /* Debug */,
 				E74DB2761E03235800EDD798 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E787CED71E04CE1100705C4E /* Build configuration list for PBXNativeTarget "Photorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E787CED51E04CE1100705C4E /* Debug */,
+				E787CED61E04CE1100705C4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
