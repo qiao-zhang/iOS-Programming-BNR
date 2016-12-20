@@ -39,9 +39,9 @@ class PhotoCategoryViewController: UITableViewController {
     switch segue.identifier {
     case "ShowPhotoTitles"?:
       let photoTitlesVC = segue.destination as! PhotoTitlesViewController
-      photoTitlesVC.photoStore = PhotoStoreWithURLSession()
+      photoTitlesVC.dataModel = DataModelWithURLSession()
       let category = sender as! PhotoCategory
-      photoTitlesVC.photoStore.photoCategory = category
+      photoTitlesVC.dataModel.photoCategory = category
       photoTitlesVC.navigationItem.title = category.rawValue
     case "ShowThumbnails"?:
       let thumbnailsVC = segue.destination

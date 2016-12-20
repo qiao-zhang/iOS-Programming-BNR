@@ -11,7 +11,7 @@ import UIKit
 protocol ImageStore {
   func fetchImageAsync(
     for photo: Photo,
-    then handle: @escaping (FetchImageResult) -> Void)
+    then callback: @escaping (FetchImageResult) -> Void)
 }
 
 enum FetchImageResult {
@@ -19,6 +19,6 @@ enum FetchImageResult {
   case failure(Error)
 }
 
-enum PhotoError: Error {
+enum ImageError: Error {
   case imageCreationError
 }

@@ -39,6 +39,7 @@
 		E7BC60CE1E085DB200A14464 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC60CD1E085DB200A14464 /* ImageStore.swift */; };
 		E7BC60D21E0867F100A14464 /* PhotoCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC60D11E0867F100A14464 /* PhotoCategoryViewController.swift */; };
 		E7BC60D41E08691500A14464 /* PhotoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC60D31E08691500A14464 /* PhotoCategory.swift */; };
+		E7BC60D61E08CC5400A14464 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC60D51E08CC5400A14464 /* DataModel.swift */; };
 		E7BF10701DFDC0B7003CE1F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7BF10721DFDC0B7003CE1F6 /* Localizable.strings */; };
 		E7F1817B1E01928600D01D74 /* ItemDetailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1817A1E01928600D01D74 /* ItemDetailTextField.swift */; };
 		E7F1817F1E01C1F500D01D74 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1817E1E01C1F500D01D74 /* ImageStore.swift */; };
@@ -99,6 +100,7 @@
 		E7BC60CD1E085DB200A14464 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		E7BC60D11E0867F100A14464 /* PhotoCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCategoryViewController.swift; sourceTree = "<group>"; };
 		E7BC60D31E08691500A14464 /* PhotoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCategory.swift; sourceTree = "<group>"; };
+		E7BC60D51E08CC5400A14464 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E7BF10711DFDC0B7003CE1F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10731DFDC0B9003CE1F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7BF10741DFDC0BB003CE1F6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				E7BC60D31E08691500A14464 /* PhotoCategory.swift */,
 				E7BC60C41E0823DE00A14464 /* PhotoStore.swift */,
+				E7BC60D51E08CC5400A14464 /* DataModel.swift */,
 				E7BC60CD1E085DB200A14464 /* ImageStore.swift */,
 				E787CEDA1E04D0A200705C4E /* FlickrAPI.swift */,
 			);
@@ -526,6 +529,7 @@
 				E7BC60D21E0867F100A14464 /* PhotoCategoryViewController.swift in Sources */,
 				E7BC60D41E08691500A14464 /* PhotoCategory.swift in Sources */,
 				E7BC60C71E0829D700A14464 /* Photo.swift in Sources */,
+				E7BC60D61E08CC5400A14464 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

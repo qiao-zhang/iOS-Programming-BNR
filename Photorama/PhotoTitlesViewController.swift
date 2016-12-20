@@ -8,38 +8,47 @@
 
 import UIKit
 
-class PhotoTitlesViewController: UIViewController {
-  @IBOutlet var tableView: UITableView!
-  var photoStore: PhotoStore!
+class PhotoTitlesViewController: UITableViewController {
+
+  var dataModel: PhotoStore!
   
   // MARK: View Life Cycle
   override func viewDidLoad() {
-    photoStore.fetchPhotosAsync {
+    dataModel.fetchPhotosAsync {
       OperationQueue.main.addOperation {
-        print("Fetched \(self.photoStore.photos.count) photos")
+        print("Fetched \(self.dataModel.photos.count) photos")
         self.tableView.reloadData()
       }
     }
   }
-  
-}
 
-// MARK: - Table View Data Source
-extension PhotoTitlesViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView,
+  // MARK: Table View Data Source
+  override func tableView(_ tableView: UITableView,
                  numberOfRowsInSection section: Int) -> Int {
-    return photoStore.photos.count
+    return dataModel.photos.count
   }
 
-  func tableView(_ tableView: UITableView,
+  override func tableView(_ tableView: UITableView,
                  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     print("Set up cell")
     let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTitleCell",
                                              for: indexPath)
-    let photo = photoStore.photos[indexPath.row]
+    let photo = dataModel.photos[indexPath.row]
     cell.textLabel!.text = photo.title
     cell.detailTextLabel!.text = photo.dateTaken.description
     
     return cell
+  }
+  
+  // MARK: Navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.identifier {
+    case "ShowImage"?:
+      let cell = sender as! UITableViewCell
+      let imageVC = segue.destination
+      imageVC.title = cell.textLabel!.text
+    default:
+      assertionFailure("invalid segue identifier")
+    }
   }
 }
