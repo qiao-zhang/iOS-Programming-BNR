@@ -41,7 +41,7 @@ class PhotoCategoryViewController: UITableViewController {
       let photoTitlesVC = segue.destination as! PhotoTitlesViewController
       photoTitlesVC.dataModel = DataModelWithURLSession()
       let category = sender as! PhotoCategory
-      photoTitlesVC.dataModel.photoCategory = category
+      photoTitlesVC.photoCategory = category
       photoTitlesVC.navigationItem.title = category.rawValue
     case "ShowThumbnails"?:
       let thumbnailsVC = segue.destination

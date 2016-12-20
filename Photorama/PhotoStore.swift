@@ -9,10 +9,8 @@
 import UIKit
 
 protocol PhotoStore {
-  var photos: [Photo] { get set }
-  var photoCategory: PhotoCategory! { get set }
-  func fetchPhotosAsync(
-    then handle: @escaping () -> Void)
+  func fetchPhotosAsync(for category: PhotoCategory,
+    then handle: @escaping (FetchPhotosResult) -> Void)
 }
 
 enum FetchPhotosResult {
